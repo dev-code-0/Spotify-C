@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <aside class="sidebar-left">
+            <div class="sidebar-left-top">
+                <div class="user-profile">
+                    <figure class="logo-spotify-svg">
+                        <img src="svg/logo.svg" alt="Spotify Logo">
+                    </figure>
+                    <h1>Spotify</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#"> <img class="logo-icons" src="svg/discover.svg" alt="Discover"> Discover</a></li>
+                    <li><a href="#"> <img class="logo-icons" src="svg/album.svg" alt="Album"> Album</a></li>
+                    <li><a href="#"> <img class="logo-icons" src="svg/play.svg" alt="Playlist"> PlayList</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-left-buttom">
+                <ul class="nav-links">
+                    <li><a href="#"> <img class="logo-icons" src="svg/user.svg" alt=""> Cuenta</a></li>
+                    <li><a href="#"> <img class="logo-icons" src="svg/condig.svg" alt=""> Configuración</a></li>
+                    <li><a href="#"> <img class="logo-icons" src="svg/out.svg" alt=""> Salir</a></li>
+                </ul>
+            </div>
+
+        </aside>
+
+        <main class="main-content">
+
+            <section class="popular-play-lists">
+                <h2>Popular Play Lists</h2>
+                <div class="swiper">
+                    <div class="carousel-container">
+                        <div class="galeria-2">
+                            <div class="card">
+                                <img src="images/PlayList/1.jpg"
+                                    alt="">
+                                <div class="cuerpo-card">
+                                    <h5>Party Starters</h5>
+                                    <button class="btn-listen">LISTEN NOW <span>▶</span></button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="images/PlayList/2.jpg"
+                                    alt="">
+                                <div class="cuerpo-card">
+                                    <h5>Electronic</h5>
+                                    <button class="btn-listen">LISTEN NOW <span>▶</span></button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="images/PlayList/3.jpg"
+                                    alt="">
+                                <div class="cuerpo-card">
+                                    <h5>Smooth Jass Journey</h5>
+                                    <button class="btn-listen">LISTEN NOW <span>▶</span></button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="images/PlayList/4.jpg"
+                                    alt="">
+                                <div class="cuerpo-card">
+                                    <h5>Uplifting Rhythms</h5>
+                                    <button class="btn-listen">LISTEN NOW <span>▶</span></button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="images/PlayList/5.jpg"
+                                    alt="">
+                                <div class="cuerpo-card">
+                                    <h5>Midnight Moods</h5>
+                                    <button class="btn-listen">LISTEN NOW <span>▶</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pagination">
+                        <span class="active"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="featured-artists">
+                <h2>Artistas Destacados</h2>
+                <div class="artists-container">
+                    <div class="artist-card">
+                        <img src="images/Artists/paulo-londra.jpg" alt="Paulo Londra">
+                        <p>Paulo Londra</p>
+                    </div>
+
+                    <div class="artist-card">
+                        <img src="images/Artists/the-weeknd.jpg" alt="The Weeknd">
+                        <p>The Weeknd</p>
+                    </div>
+
+                    <div class="artist-card">
+                        <img src="images/Artists/david-guetta.jpg" alt="David Guetta">
+                        <p>David Guetta</p>
+                    </div>
+
+                    <div class="artist-card">
+                        <img src="images/Artists/anitta.jpg" alt="Anitta">
+                        <p>Anitta</p>
+                    </div>
+
+                    <div class="artist-card">
+                        <img src="images/Artists/taylor-swift.jpg" alt="Taylor Swift">
+                        <p>Taylor Swift</p>
+                    </div>
+
+                    <div class="artist-card">
+                        <img src="images/Artists/grupo-5.jpg" alt="Grupo 5">
+                        <p>Grupo 5</p>
+                    </div>
+
+                    <div class="artist-card">
+                        <img src="images/Artists/feid.jpg" alt="Feid">
+                        <p>Feid</p>
+                    </div>
+
+                    <div class="artist-card">
+                        <img src="images/Artists/karol-g.jpg" alt="Karol G">
+                        <p>Karol G</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recommended-albums">
+                <h2>Álbumes Recomendados</h2>
+            </section>
+
+        </main>
+
+        <aside class="sidebar-right">
+
+            <section class="recommended-songs">
+                <h2>Canciones Recomendadas</h2>
+            </section>
+
+            <section class="music-player">
+                <figure>
+
+                </figure>
+
+            </section>
+        </aside>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
