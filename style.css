@@ -12,14 +12,17 @@ body {
     height: 100vh;
 }
 
+*::-webkit-scrollbar {
+    display: none;
+}
+
 .app-container {
     backdrop-filter: blur(  20px);
     display: grid;
     grid-template-columns: 200px 1fr 300px;
     height: 100dvh;
-    border: 1px solid #1eff00;
+    border: 3px solid #1eff00;
     border-radius: 10px;
-    margin: 20px;
     height: 100dvh;
     font-family: "Gill Sans", sans-serif;
 
@@ -114,7 +117,8 @@ body {
 }
 
 .popular-play-lists h2, 
-.featured-artists h2 {
+.featured-artists h2,
+.recommended-albums h2{
     font-size: 1.4rem;
     margin-bottom: 25px;
     text-align: left;
@@ -122,6 +126,7 @@ body {
     font-weight: bold;
     letter-spacing: 0.5px;
     color: #fff;
+    text-shadow: 0 0 5px #1eff008e, 0 0 10px #1eff00a8, 0 0 20px #1eff007c;
 }
 
 .swiper {
@@ -145,10 +150,6 @@ body {
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y;
   user-select: none;
-}
-
-.galeria-2::-webkit-scrollbar {
-  display: none;
 }
 
 .galeria-2.is-dragging {
@@ -220,23 +221,21 @@ body {
 }
 
 .btn-listen {
-    background-color: rgba(255, 255, 255, 0.2);
+    background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.5);
     color: #fff;
-    padding: 5px 12px;
+    padding: 10px 15px;
     border-radius: 20px;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: bold;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 5px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.btn-listen:hover{
-    background-color: rgba(255, 255, 255, 0.4);
-}
+
 
 .btn-listen span {
     font-size: 0.6rem;
@@ -277,13 +276,13 @@ body {
 
 
 
-.featured-artists{
+.featured-artists, .recommended-albums{
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.artists-container{
+.artists-container, .albums-container{
     display: flex;
     gap: 35px;
     overflow-x: auto;
@@ -291,63 +290,124 @@ body {
     scrollbar-width: none;
 }
 
-.artists-container::-webkit-scrollbar {
-    display: none;
-}
-
-.artist-card {
+.artist-card, .albums-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px; /* Espacio entre la foto y el nombre */
+    gap: 15px;
     cursor: pointer;
-    min-width: max-content; /* Evita que el texto se aplaste */
+    min-width: max-content; 
+    
 }
 
-/* Estilo de los círculos de artistas */
+
 .artist-card img, .empty-artist {
     width: 130px;
     height: 130px;
     border-radius: 50%; /* Esto los hace un círculo perfecto */
     object-fit: cover;
     /* EL RESPLANDOR (Glow): Sombra morada oscura difuminada */
-    box-shadow: 0 0 20px rgba(100, 50, 255, 0.4); 
+    box-shadow: 0 0 10px rgba(100, 50, 255, 0.5), 0 0 20px rgba(100, 50, 255, 0.3), 0 0 30px rgba(100, 50, 255, 0.1); 
     border: 1px solid rgba(255, 255, 255, 0.1); /* Un bordecito muy sutil */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Estilo para los círculos vacíos (Grupo 5, Feid, Karol G en tu imagen) */
+
 .empty-artist {
     background-color: transparent;
 }
 
-/* Animación al pasar el mouse por encima */
+
 .artist-card:hover img, .artist-card:hover .empty-artist {
-    transform: scale(1.05); /* Crece un poquito */
-    box-shadow: 0 0 30px rgba(100, 50, 255, 0.8); /* El resplandor se hace más fuerte */
+    transform: scale(0.85); 
+    transition: all 0.9s ease;
+    box-shadow: 0 0 30px rgba(64, 50, 255, 0.8); /* El resplandor se hace más fuerte */
 }
 
-/* Texto del nombre del artista */
-.artist-card p {
-    font-size: 0.9rem;
+
+.artist-card p{
+    font-size: 1.2rem;
     color: #e0e0e0;
-    font-weight: 500;
+    font-weight: 700;
     margin: 0;
 }
 
-
-
-
-
-
-.recommended-albums{
-    border: 1px solid blue; 
-    
+.albums-card{
+    width: 260px;
+    height: 310px;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
 }
 
+.albums-card figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Un bordecito muy sutil */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: rgba(221, 221, 221, 0.3) 0px 8px 18px -3px, rgba(221, 221, 221, 0.2) 0px -3px 0px inset;
+}
+
+.albums-card img {
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+    transform: scale(1);
+    transition: transform 0.9s ease;
+}
+
+.albums-card:hover img {
+    transform: scale(1.1); 
+    transition: all 0.9s ease;
+}
+
+.cuerpo-album{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    width: 100%;
+    padding: 0 15px;
+}
+
+
+.cuerpo-album h5 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #e0e0e0;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.btn-album{
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+
+}
+
+.btn-album:hover, .btn-listen:hover{
+    color: #00FF44;
+    opacity: 1;
+    transition: all 0.3s ease;
+    border: #00FF44 1px solid;
+
+}
 
 .sidebar-right {
     background-color: rgba(0, 0, 255, 0.1);
     border-left: 1px solid #1eff00;
-
 }
