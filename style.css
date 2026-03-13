@@ -3,8 +3,9 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-
+    box-sizing: border-box; 
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 body {
@@ -84,6 +85,8 @@ body {
     margin-bottom: 15px;
     width: 100%;
     transition: all 0.9s ease;
+    border: 1px solid transparent;
+    padding: 2px;
 }
 
 .nav-links li:hover{
@@ -91,6 +94,7 @@ body {
     border-radius: 5px;
     transform: scale(1.1);
     transition: all 0.9s ease;
+    border: #00FF44 1px solid;
 }
 
 .nav-links li a {
@@ -123,7 +127,7 @@ body {
 .popular-play-lists h2, 
 .featured-artists h2,
 .recommended-albums h2,
-.songs-container h2 {
+.sidebar-right h2 {
     font-size: 1.4rem;
     margin-bottom: 20px;
     text-align: left;
@@ -154,7 +158,7 @@ body {
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y;
-  user-select: none;
+  cursor: grab;
 }
 
 .galeria-2.is-dragging {
@@ -191,6 +195,7 @@ body {
 
 .card.active {
   transform: scale(1.1);
+  transition: all 0.9s ease;
   z-index: 10;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
 }
@@ -200,7 +205,6 @@ body {
   object-fit: cover;
   height: 300px;
   cursor: grab;
-  -webkit-user-drag: none;
   pointer-events: none;
 }
 
@@ -281,6 +285,8 @@ body {
     gap: 35px;
     overflow-x: auto;
     padding: 10px 10px 30px 10px;
+    cursor: grab;
+    user-select: none;
     scrollbar-width: none;
 }
 
@@ -288,19 +294,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    cursor: pointer;
+    gap: 5px;
     min-width: max-content; 
     
 }
 
 .artist-card img, .empty-artist {
+    pointer-events: none;
     width: 130px;
     height: 130px;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 0 10px rgba(100, 50, 255, 0.5), 0 0 20px rgba(100, 50, 255, 0.3), 0 0 30px rgba(100, 50, 255, 0.1); 
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Un bordecito muy sutil */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -315,6 +321,7 @@ body {
     transition: all 0.9s ease;
     box-shadow: 0 0 30px rgba(64, 50, 255, 0.8); /* El resplandor se hace más fuerte */
 }
+
 
 
 .artist-card p{
@@ -365,9 +372,13 @@ body {
     padding: 0 15px;
 }
 
+.cuerpo-album a, .artist-card a{
+    text-decoration: none;
+}
+
 
 .cuerpo-album h5 {
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: #e0e0e0;
     margin: 0;
@@ -385,20 +396,11 @@ body {
     padding: 0 15px;
 }
 
-
-.cuerpo-album h5 {
-    font-size: 1.7rem;
-    font-weight: 700;
-    color: #e0e0e0;
-    margin: 0;
-    letter-spacing: 1px;
-}
-
 .btn-album{
     border: 1px solid rgba(255, 255, 255, 0.5);
     background: transparent;
     color: #fff;
-    padding: 10px 15px;
+    padding: 5px 10px;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: bold;
@@ -421,20 +423,21 @@ body {
 
 .sidebar-right {
     border-left: 1px solid #1eff00;
+    overflow: hidden;
 }
 
 .songs-container {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin: 5px
-    ;
+    margin: 5px;
+    overflow-y: auto;
 }
 
 .songs-card{
     display: grid;
-    grid-template-columns: 26% auto 10%;
-    gap: 15px;
+    grid-template-columns: 16% auto 15%;
+    gap: 5px;
     align-items: center;
     margin-bottom: 10px;
 }
@@ -467,7 +470,7 @@ body {
     font-size: 0.9rem;
     color: #e0e0e0;
     font-weight: 900;
-    margin: 0 0 8px 10px;
+    margin: 0 0 8px 8px;
 }
 
 .songs-card p {
