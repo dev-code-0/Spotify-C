@@ -21,10 +21,11 @@ function activarMovimiento(container){
         container.scrollLeft = scrollX - move
     })
 
-    container.addEventListener("mouseup", () =>{
+    document.addEventListener("mouseup", () =>{
         goMove = false
         container.style.cursor="grab"
     })
+    
 
 }
 
