@@ -532,8 +532,8 @@ body {
     align-items: center;
     justify-content: center;
     padding: 30px 20px;
-    margin: 20px;
-    gap: 10px;
+    margin: 5px 30px;
+    gap: 5px;
 }
 
 .music-player-cover{
@@ -549,6 +549,7 @@ body {
     object-fit: cover;
     transition: transform 0.5s ease-out;
     pointer-events: none;
+    display: block;
 }
 
 .music-player-cover span {
@@ -570,8 +571,10 @@ body {
     font-size: 1.3rem;
     font-weight: 900;
     color: #e0e0e0;
-    margin: 20px 0 2px 0;
+    margin: 5px 0 5px 0;
     letter-spacing: 1px;
+    margin: 0;
+
 }
 
 .music-player p{
@@ -588,8 +591,9 @@ body {
     height: 6px;
     background: rgba(200, 187, 255, 0.6);
     border-radius: 4px;
-    margin-bottom: 16px;
+    margin-bottom: 5px;
     cursor: pointer;
+    display: block;
 }
 
 .music-player input::-webkit-slider-thumb {
@@ -621,7 +625,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 8px rgba(199, 187, 255, 0.801);
     cursor: pointer;
-    transition: all 0.9s ease;
+    transition: all 0.4s ease;
 }
 
 .music-player .pause-play{
@@ -630,6 +634,6 @@ body {
 
 .music-player button:hover{
     background-color: rgba(255, 255, 255, 0.171);
-    transition: all 0.9s ease;
+    transition: all 0.4s ease;
 
 }
