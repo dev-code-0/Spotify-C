@@ -15,7 +15,7 @@ function activarMovimiento(container){
 
     })
 
-    container.addEventListener("mousemove", (go) => {
+    document.addEventListener("mousemove", (go) => {
         if(!goMove) return
         const move = go.pageX - goX
         container.scrollLeft = scrollX - move
