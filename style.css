@@ -116,16 +116,25 @@ body {
     width: 30px;
 }
 
+/* --- CONTENEDOR PRINCIPAL (Envoltorio de todo) --- */
 .main-content {
     min-width: 0;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Evita que la página entera se ensanche accidentalmente */
+    
+    /* Hacemos que sus hijos (las secciones) se apilen en columna */
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Espacio vertical de 50px entre el carrusel y las siguientes secciones */
+    padding-bottom: 50px; /* Espacio al final de la página */
 }
 
-.popular-play-lists {
+/* Esto asegura que "Featured Artists" y "Recommended Albums" tengan el mismo ancho y estilo base que "Popular Play Lists" */
+.popular-play-lists,
+.featured-artists,
+.recommended-albums {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 10px;
 }
 
 .popular-play-lists h2,
@@ -141,6 +150,12 @@ body {
     color: #fff;
     text-shadow: 0 0 5px #1eff008e, 0 0 10px #1eff00a8, 0 0 20px #1eff007c;
 }
+
+
+
+
+
+
 
 .swiper {
     width: 100%;
@@ -284,13 +299,6 @@ body {
     transform: scale(1.3);
     width: 25px;
     border-radius: 10px;
-}
-
-.featured-artists,
-.recommended-albums {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
 }
 
 .artists-container,
