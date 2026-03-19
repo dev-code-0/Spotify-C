@@ -171,7 +171,7 @@ body {
     display: flex;
     gap: 0px;
     overflow-x: auto;
-    padding: 30px 0;
+    padding: 60px 0;
     /* OJO: Eliminamos padding-left y padding-right */
     scroll-snap-type: x mandatory;
     scroll-behavior: auto;
@@ -183,55 +183,55 @@ body {
 }
 
 .galeria-2.is-dragging {
-    cursor: grabbing;
-    scroll-snap-type: none;
-}
-
-.galeria-2.smooth-scroll {
-    scroll-behavior: smooth !important;
-    /* Enciende la suavidad solo cuando es necesario */
-}
-
-.galeria-2.no-snap {
-    scroll-snap-type: none;
-    /* Para el teletransporte invisible */
+    cursor: grabbing !important;
+    scroll-snap-type: none !important;
 }
 
 .card {
     min-width: 480px;
     height: 270px;
-    margin: 0 -80px;
+    margin: 0 -55px;
     /* Aumentamos el margen negativo para que se superpongan más, como en el video */
-    transform: scale(0.7);
+    transform: scale(0.8);
     z-index: 1;
-    transition: transform 0.4s ease-out, opacity 0.4s ease-out, box-shadow 0.4s ease-out, z-index 0s;
+    opacity: 0.4;
     position: relative;
     scroll-snap-align: center;
     scroll-snap-stop: always;
     border-radius: 20px;
     overflow: hidden;
+    transition: transform 0.6s ease, z-index 0.6s ease, opacity 0.6s ease, filter 0.6s ease, box-shadow 0.6s ease;
+    filter: blur(0px);
 }
 
 .card.prev-1,
 .card.next-1 {
-    transform: scale(0.85);
-    /* Más grandes que las del fondo */
-    z-index: 3;
-    /* Por encima de las lejanas, pero debajo de la central */
+    transform: scale(1);
+    z-index: 5;
+    opacity: 0.9;
+    filter: blur(1px);
+    /* Borramos el transition: all de aquí */
 }
 
 .card.active {
-    transform: scale(1.1);
-    transition: all 0.9s ease;
+    transform: scale(1.2);
     z-index: 10;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    opacity: 1;
+    box-shadow: 0 15px 40px #ffffff4a;
+}
+
+.card.prev-2,
+.card.next-2 {
+    transform: scale(0.6);
+    z-index: 3;
+    opacity: 0.7;
+    filter: blur(2px);
 }
 
 .card img {
     width: 100%;
     object-fit: cover;
     height: 300px;
-    cursor: grab;
     pointer-events: none;
 }
 
@@ -246,7 +246,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 .cuerpo-card h5 {
@@ -267,15 +267,9 @@ body {
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
 }
 
-
-
-.btn-listen span {
-    font-size: 0.6rem;
-}
 
 .pagination {
     display: flex;
@@ -300,6 +294,16 @@ body {
     width: 25px;
     border-radius: 10px;
 }
+
+/* --- CLASES UTILITARIAS PARA EL JAVASCRIPT --- */
+.galeria-2.no-snap {
+    scroll-snap-type: none !important;
+}
+
+.galeria-2.smooth-scroll {
+    scroll-behavior: smooth !important;
+}
+
 
 .artists-container,
 .albums-container {
